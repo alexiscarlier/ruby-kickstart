@@ -16,4 +16,18 @@
 #
 
 class Person
+  attr_accessor 'name', 'age'
+
+  def initialize(name, age)
+    @name = name
+    @age = age
+  end
+
+  def birthday
+    @age += 1
+  end
 end
+
+#josh = Person.new 'Josh', 28
+#You can reset the name by reseting josh.name = 'Joshua' when you call
+#josh.name, it now returns 'Joshua'
