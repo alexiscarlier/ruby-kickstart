@@ -6,3 +6,17 @@
 #
 # Example:
 # word_count "The dog and the cat" # => {"the" => 2, "dog" => 1, "and" => 1, "cat" => 1}
+
+#First attempt
+def word_count(string)
+  to_return = Hash.new(0)
+  string.split.map {|word| word.downcase}.each {|word| to_return[word] += 1}
+  to_return
+end
+
+#Actual answer
+def word_count(str)
+  words = Hash.new { 0 }
+  str.split.each { |word| words[word.downcase] += 1 }
+  words
+end
