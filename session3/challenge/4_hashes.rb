@@ -5,3 +5,21 @@
 # There will be no punctuation in the strings.
 #
 # first_pos "The dog and the cat and the cow" # => {"The" => 0, "dog" => 1, "and" => 2, "the" => 3, "cat" => 4, "cow" => 7}
+
+#First attempt
+def first_pos(str)
+  word_positions = {}
+  str.split.each_with_index do |word, idx|
+    word_positions[word] = idx if word_positions[word] == nil
+  end
+  word_positions
+end
+
+#Actual answer
+def first_pos(str)
+  to_return = {}
+  str.split.each_with_index do |word, index|
+    to_return[word] ||= index
+  end
+  to_return
+end
